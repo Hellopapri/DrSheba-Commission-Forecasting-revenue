@@ -1,0 +1,12 @@
+{
+  "model_name": "RandomForestRegressor",
+  "training_rows": 40,
+  "test_rows": 10,
+  "mae": 11.61,
+  "rmse": 16.61,
+  "mape": 16.29,
+  "r2": 0.093,
+  "baseline_mae": 16.0,
+  "baseline_rmse": 17.46,
+  "baseline_mape": 22.92
+}

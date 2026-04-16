@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Commission Revenue Forecast</title>
+    <style>
+        :root {
+            --bg: #f3efe7;
+            --ink: #162d4a;
+            --accent: #1f67c6;
+            --accent-strong: #123f7a;
+            --accent-soft: #dce9fb;
+            --card: rgba(255, 252, 247, 0.96);
+            --line: #d7cec0;
+            --muted: #667981;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            font-family: Georgia, "Times New Roman", serif;
+            background:
+                radial-gradient(circle at top left, rgba(31, 103, 198, 0.18), transparent 26%),
+                radial-gradient(circle at top right, rgba(77, 142, 232, 0.14), transparent 22%),
+                radial-gradient(circle at bottom right, rgba(18, 63, 122, 0.16), transparent 28%),
+                linear-gradient(135deg, #f4f8ff 0%, #e8effb 100%);
+        }
+
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 26px 18px 46px;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(31, 103, 198, 0.96), rgba(18, 63, 122, 0.98));
+            color: #f7fafc;
+            border-radius: 28px;
+            padding: 30px;
+            box-shadow: 0 22px 60px rgba(23, 49, 59, 0.18);
+            text-align: center;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: auto -40px -65px auto;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.22), transparent 62%);
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.78rem;
+            opacity: 0.78;
+        }
+
+        h1, h2, h3, p {
+            margin-top: 0;
+        }
+
+        .hero h1 {
+            margin: 10px 0 12px;
+            font-size: clamp(2rem, 5vw, 3.7rem);
+            line-height: 0.98;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+            justify-content: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            color: rgba(247, 250, 252, 0.92);
+            font-size: 0.88rem;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        .stack {
+            display: grid;
+            gap: 18px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            padding: 22px;
+            box-shadow: 0 16px 34px rgba(23, 49, 59, 0.07);
+            backdrop-filter: blur(6px);
+        }
+
+        .card h2,
+        .card h3 {
+            margin-bottom: 14px;
+        }
+
+        .panel-head {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .panel-mark {
+            width: 42px;
+            height: 42px;
+            flex: 0 0 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+            color: #fff;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            box-shadow: 0 10px 20px rgba(31, 103, 198, 0.18);
+        }
+
+        .panel-mark svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .panel-kicker {
+            margin: 0 0 4px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.72rem;
+        }
+
+        .panel-head h2,
+        .panel-head h3 {
+            margin: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .form-grid .full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 0.92rem;
+            color: var(--muted);
+        }
+
+        .label-title {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 0.8rem;
+            letter-spacing: 0.02em;
+            color: var(--accent-strong);
+            font-weight: 700;
+        }
+
+        input, select, button {
+            width: 100%;
+            border-radius: 14px;
+            border: 1px solid var(--line);
+            padding: 12px 13px;
+            font: inherit;
+            color: var(--ink);
+            background: #fffdf9;
+        }
+
+        input,
+        select {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum" 1, "lnum" 1;
+        }
+
+        button {
+            border: 0;
+            background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+            color: #f8fbfc;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 10px 24px rgba(31, 103, 198, 0.22);
+        }
+
+        .btn-secondary {
+            background: #e8effb;
+            color: var(--accent);
+            box-shadow: 0 4px 12px rgba(31, 103, 198, 0.12);
+        }
+
+        .btn-secondary:hover {
+            background: #dce9fb;
+        }
+
+        .revenue-section {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .revenue-section input {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .btn-inline {
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .hidden.show {
+            display: block;
+        }
+
+        .stat {
+            padding: 18px;
+            border-radius: 20px;
+            background: #fffdf9;
+            border: 1px solid var(--line);
+        }
+
+        .stat.hero-stat {
+            background: linear-gradient(135deg, rgba(31, 103, 198, 0.12), rgba(18, 63, 122, 0.08));
+            border-color: rgba(31, 103, 198, 0.22);
+        }
+
+        .stat .label {
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.75rem;
+        }
+
+        .stat .value {
+            margin: 8px 0 0;
+            font-size: clamp(1.55rem, 3vw, 2rem);
+            line-height: 1.1;
+            white-space: nowrap;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum" 1, "lnum" 1;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 11px 8px;
+            border-bottom: 1px solid var(--line);
+            font-size: 0.95rem;
+            white-space: nowrap;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum" 1, "lnum" 1;
+        }
+
+        th {
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.76rem;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 7px 11px;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: #154f97;
+            font-size: 0.84rem;
+            margin: 0 8px 8px 0;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        .summary-shell {
+            display: grid;
+            gap: 14px;
+        }
+
+        .summary-topline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .mini-note {
+            margin: 0;
+            padding: 12px 14px;
+            border-radius: 16px;
+            background: rgba(31, 103, 198, 0.08);
+            color: var(--accent-strong);
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            margin-top: 22px;
+            padding: 18px 22px;
+            border-radius: 22px;
+            background: rgba(255, 251, 245, 0.92);
+            border: 1px solid var(--line);
+            text-align: center;
+            box-shadow: 0 16px 32px rgba(23, 49, 59, 0.05);
+        }
+
+        .footer-title {
+            margin: 0;
+            font-size: 1.15rem;
+            color: var(--accent-strong);
+        }
+
+        .footer-copy {
+            margin: 8px 0 0;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        @media (max-width: 980px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .wrap {
+                padding: 16px 12px 28px;
+            }
+
+            .hero, .card {
+                border-radius: 18px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <section class="hero">
+            <div class="eyebrow">Django + ML Forecasting</div>
+            <h1>Dr.Sheba Commission Revenue Forecast</h1>
+            <div class="hero-meta">
+                <span class="hero-badge">Backend: Django</span>
+                <span class="hero-badge">Revenue Forecast Dashboard</span>
+            </div>
+        </section>
+
+        <section class="layout">
+            <div class="stack">
+                <article class="card">
+                    <div class="panel-head">
+                        <div class="panel-mark" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M4 19h16"></path>
+                                <path d="M6 16l4-5 4 3 4-6"></path>
+                                <path d="M18 10h0"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="panel-kicker">Forecast Panel</div>
+                            <h2>Scenario Simulation</h2>
+                        </div>
+                    </div>
+                    <form method="get">
+                        <div class="form-grid">
+                            <label>
+                                <span class="label-title">Horizon Days</span>
+                                <input type="number" min="1" name="forecast_horizon_days" value="{{ forecast_form.horizon_days }}">
+                            </label>
+                            <label>
+                                <span class="label-title">Booking Growth %</span>
+                                <input type="number" step="0.1" name="forecast_booking_growth_pct" value="{{ forecast_form.booking_growth_pct }}">
+                            </label>
+                            <label>
+                                <span class="label-title">Cancellation Rate %</span>
+                                <input type="number" step="0.1" name="forecast_cancellation_rate" value="{{ forecast_form.cancellation_rate }}">
+                            </label>
+                            <label>
+                                <span class="label-title">Expected Daily Bookings</span>
+                                <input type="number" step="0.1" min="0" name="forecast_avg_daily_bookings" value="{{ forecast_form.avg_daily_bookings }}">
+                            </label>
+                            <label>
+                                <span class="label-title">Department</span>
+                                <select name="forecast_department">
+                                    <option value="">All</option>
+                                    {% for item in filter_options.departments %}
+                                    <option value="{{ item }}" {% if forecast_form.department == item %}selected{% endif %}>{{ item }}</option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                            <label>
+                                <span class="label-title">City</span>
+                                <select name="forecast_city">
+                                    <option value="">All</option>
+                                    {% for item in filter_options.cities %}
+                                    <option value="{{ item }}" {% if forecast_form.city == item %}selected{% endif %}>{{ item }}</option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                            <label>
+                                <span class="label-title">Doctor Type</span>
+                                <select name="forecast_doctor_type">
+                                    <option value="">All</option>
+                                    {% for item in filter_options.doctor_types %}
+                                    <option value="{{ item }}" {% if forecast_form.doctor_type == item %}selected{% endif %}>{{ item }}</option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                            <label>
+                                <span class="label-title">Payment Method</span>
+                                <select name="forecast_payment_method">
+                                    <option value="">All</option>
+                                    {% for item in filter_options.payment_methods %}
+                                    <option value="{{ item }}" {% if forecast_form.payment_method == item %}selected{% endif %}>{{ item }}</option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                        </div>
+                        <button type="submit">Run Multi-Level Forecast</button>
+                    </form>
+                </article>
+
+                <article class="card">
+                    <div class="panel-head">
+                        <div class="panel-mark" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 5v14"></path>
+                                <path d="M5 12h14"></path>
+                                <path d="M7.5 7.5h0"></path>
+                                <path d="M16.5 16.5h0"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="panel-kicker">Booking Panel</div>
+                            <h2>Single Booking Prediction</h2>
+                        </div>
+                    </div>
+                    <form method="get">
+                        <input type="hidden" name="predict_booking" value="1">
+                        <label>
+                            <span class="label-title">Booking Date</span>
+                            <input type="date" name="booking_date" value="{{ booking_form.booking_date }}">
+                        </label>
+                        <label>
+                            <span class="label-title">Doctor</span>
+                            <select name="doctor_id">
+                                <option value="">All Doctors</option>
+                                {% for item in filter_options.doctors %}
+                                <option value="{{ item.id }}" {% if booking_form.doctor_id == item.id %}selected{% endif %}>{{ item.label }}</option>
+                                {% endfor %}
+                            </select>
+                        </label>
+                        <div class="form-grid">
+                            <label>
+                                <span class="label-title">Specialization</span>
+                                <select name="specialization">
+                                    <option value="">Select Specialization</option>
+                                    {% for item in filter_options.departments %}
+                                    <option value="{{ item }}" {% if booking_form.specialization == item %}selected{% endif %}>{{ item }}</option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                            <label>
+                                <span class="label-title">City</span>
+                                <select name="city">
+                                    <option value="">Select City</option>
+                                    {% for item in filter_options.cities %}
+                                    <option value="{{ item }}" {% if booking_form.city == item %}selected{% endif %}>{{ item }}</option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                        </div>
+                        <div class="form-grid">
+                            <label>
+                                <span class="label-title">Payment Method</span>
+                                <select name="payment_method">
+                                    <option value="">Default</option>
+                                    {% for item in filter_options.payment_methods %}
+                                    <option value="{{ item }}" {% if booking_form.payment_method == item %}selected{% endif %}>{{ item }}</option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                        </div>
+                        <label>
+                            <span class="label-title">Revenue</span>
+                            <div class="revenue-section">
+                                <input type="number" id="revenue" name="revenue" value="{{ booking_form.revenue }}" step="0.01" placeholder="Revenue (auto-calculated)" readonly style="background-color: #f5f5f5; cursor: not-allowed;">
+                                <button type="button" class="btn-secondary btn-inline" onclick="toggleManualInput('consultation_fee')">Consultation</button>
+                                <button type="button" class="btn-secondary btn-inline" onclick="toggleManualInput('service_fee')">Service Fee</button>
+                            </div>
+                        </label>
+                        <div id="consultation_fee_input" class="hidden">
+                            <label>
+                                <span class="label-title">Consultation Fee</span>
+                                <input type="number" id="consultation_fee" name="consultation_fee" step="0.01" placeholder="Enter consultation fee">
+                            </label>
+                        </div>
+                        <div id="service_fee_input" class="hidden">
+                            <label>
+                                <span class="label-title">Service Fee</span>
+                                <input type="number" id="service_fee" name="service_charge" step="0.01" placeholder="Enter service fee">
+                            </label>
+                        </div>
+                        <button type="submit">Predict Booking Commission</button>
+                    </form>
+                </article>
+            </div>
+
+            <div class="stack">
+                <section class="grid">
+                    <article class="stat hero-stat">
+                        <div class="label">Projected Commission</div>
+                        <p class="value">{{ summary.projected_commission|floatformat:2 }}</p>
+                    </article>
+                    <article class="stat">
+                        <div class="label">Projected Bookings</div>
+                        <p class="value">{{ summary.projected_bookings|floatformat:0 }}</p>
+                    </article>
+                    <article class="stat">
+                        <div class="label">Scenario Uplift</div>
+                        <p class="value">{{ summary.uplift_commission|floatformat:2 }}</p>
+                    </article>
+                </section>
+
+                <article class="card">
+                    <div class="panel-head">
+                        <div class="panel-mark" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M5 18h14"></path>
+                                <path d="M7 18V9"></path>
+                                <path d="M12 18V6"></path>
+                                <path d="M17 18v-4"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="panel-kicker">Summary Panel</div>
+                            <h2>Forecast Summary</h2>
+                        </div>
+                    </div>
+                    <div class="summary-shell">
+                    <div class="summary-topline">
+                        {% if summary.filters.department %}<span class="pill">Department: {{ summary.filters.department }}</span>{% endif %}
+                        {% if summary.filters.city %}<span class="pill">City: {{ summary.filters.city }}</span>{% endif %}
+                        {% if summary.filters.doctor_type %}<span class="pill">Doctor Type: {{ summary.filters.doctor_type }}</span>{% endif %}
+                        {% if summary.filters.payment_method %}<span class="pill">Payment: {{ summary.filters.payment_method }}</span>{% endif %}
+                    </div>
+                    <p class="mini-note">Revenue view updates automatically from the scenario values and active filters.</p>
+                    <table>
+                        <tr><th>Forecast Horizon</th><td>{{ summary.horizon_days|floatformat:0 }} days</td></tr>
+                        <tr><th>Planned Bookings</th><td>{{ summary.planned_bookings|floatformat:0 }}</td></tr>
+                        <tr><th>Completed Bookings</th><td>{{ summary.projected_bookings|floatformat:0 }}</td></tr>
+                        <tr><th>Baseline Commission</th><td>{{ summary.baseline_commission|floatformat:2 }}</td></tr>
+                        <tr><th>Projected Commission</th><td>{{ summary.projected_commission|floatformat:2 }}</td></tr>
+                        <tr><th>Booking Growth</th><td>{{ summary.booking_growth_pct|floatformat:2 }}%</td></tr>
+                        <tr><th>Cancellation</th><td>{{ summary.cancellation_rate|floatformat:2 }}%</td></tr>
+                        <tr><th>Avg Daily Bookings</th><td>{{ summary.avg_daily_bookings|floatformat:2 }}</td></tr>
+                    </table>
+                    </div>
+                </article>
+
+                {% if booking_prediction %}
+                <article class="card">
+                    <div class="panel-head">
+                        <div class="panel-mark" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M5 12h14"></path>
+                                <path d="M13 6l6 6-6 6"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="panel-kicker">Prediction Output</div>
+                            <h2>Single Booking Output</h2>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <article class="stat hero-stat">
+                            <div class="label">Predicted Commission</div>
+                            <p class="value">{{ booking_prediction.prediction.predicted_commission_amount|floatformat:2 }}</p>
+                        </article>
+                        <article class="stat">
+                            <div class="label">Predicted Commission %</div>
+                            <p class="value">{{ booking_prediction.prediction.predicted_commission_pct|floatformat:2 }}%</p>
+                        </article>
+                    </div>
+                    <p class="muted" style="margin-top: 14px;">
+                        Date: {{ booking_prediction.input.booking_date }} |
+                        Doctor: {{ booking_prediction.input.doctor_name }} |
+                        Hospital: {{ booking_prediction.input.hospital_name }}
+                    </p>
+                    <p class="muted">
+                        City: {{ booking_prediction.input.city }} |
+                        Consultation Fee: {{ booking_prediction.input.Consultation_fees|floatformat:2 }} |
+                        Service Charge: {{ booking_prediction.input.Service_charge|floatformat:2 }}
+                    </p>
+                </article>
+                {% endif %}
+
+                <section class="two-col">
+                    <article class="card">
+                        <h3>Specialization-wise Revenue</h3>
+                        <table>
+                            <thead><tr><th>Specialization</th><th>Revenue</th><th>Bookings</th></tr></thead>
+                            <tbody>
+                                {% for row in breakdowns.department %}
+                                <tr><td>{{ row.department }}</td><td>{{ row.projected_commission|floatformat:2 }}</td><td>{{ row.projected_bookings|floatformat:0 }}</td></tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </article>
+                    <article class="card">
+                        <h3>City-wise Revenue</h3>
+                        <table>
+                            <thead><tr><th>City</th><th>Revenue</th><th>Bookings</th></tr></thead>
+                            <tbody>
+                                {% for row in breakdowns.city %}
+                                <tr><td>{{ row.city }}</td><td>{{ row.projected_commission|floatformat:2 }}</td><td>{{ row.projected_bookings|floatformat:0 }}</td></tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </article>
+                </section>
+
+                <section class="two-col">
+                    <article class="card">
+                        <h3>Doctor-type Revenue</h3>
+                        <table>
+                            <thead><tr><th>Doctor Type</th><th>Revenue</th><th>Bookings</th></tr></thead>
+                            <tbody>
+                                {% for row in breakdowns.doctor_type %}
+                                <tr><td>{{ row.doctor_type }}</td><td>{{ row.projected_commission|floatformat:2 }}</td><td>{{ row.projected_bookings|floatformat:0 }}</td></tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </article>
+                    <article class="card">
+                        <h3>Payment Method Revenue</h3>
+                        <table>
+                            <thead><tr><th>Payment Method</th><th>Revenue</th><th>Bookings</th></tr></thead>
+                            <tbody>
+                                {% for row in breakdowns.payment_method %}
+                                <tr><td>{{ row.payment_method }}</td><td>{{ row.projected_commission|floatformat:2 }}</td><td>{{ row.projected_bookings|floatformat:0 }}</td></tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </article>
+                </section>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p class="footer-title">Dr.Sheba Commission Revenue Forecast</p>
+            <p class="footer-copy">Copyright by Dr.Sheba</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleManualInput(type) {
+            const divId = type + '_input';
+            const div = document.getElementById(divId);
+            div.classList.toggle('show');
+            
+            // Focus on the input if showing
+            if (div.classList.contains('show')) {
+                const input = div.querySelector('input');
+                input.focus();
+            }
+        }
+
+        function updateRevenueFromInputs() {
+            const consultationFeeInput = document.getElementById('consultation_fee');
+            const serviceFeeInput = document.getElementById('service_fee');
+            const revenueInput = document.getElementById('revenue');
+            
+            if (consultationFeeInput.value && serviceFeeInput.value) {
+                const consultationFee = parseFloat(consultationFeeInput.value);
+                const serviceFee = parseFloat(serviceFeeInput.value);
+                if (!isNaN(consultationFee) && !isNaN(serviceFee)) {
+                    revenueInput.value = (consultationFee + serviceFee).toFixed(2);
+                }
+            }
+        }
+
+        // Add event listeners for automatic revenue calculation
+        document.addEventListener('DOMContentLoaded', function() {
+            const consultationFeeInput = document.getElementById('consultation_fee');
+            const serviceFeeInput = document.getElementById('service_fee');
+            
+            if (consultationFeeInput) consultationFeeInput.addEventListener('input', updateRevenueFromInputs);
+            if (serviceFeeInput) serviceFeeInput.addEventListener('input', updateRevenueFromInputs);
+        });
+    </script>
+</body>
+</html>

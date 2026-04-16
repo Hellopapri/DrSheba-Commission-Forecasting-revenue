@@ -1,0 +1,51 @@
+Patient_id,Patient_name,Age,Gender,Phone_number,User_mail,Symptoms,Hospital_id,Consultation_fees,Service_fee,Payment_type,Payment_date,Doctor_id,Revenue
+P001,Rahim Uddin,45,Male,1712345678,rahim.ud@gmail.com,Fever and cough,HOS004,500,80,Bkash,2026-03-01,DOC003,580
+P002,Sumaiya Akter,32,Female,1823456789,sumaiya32@yahoo.com,Headache,HOS011,2100,90,Cash,2026-03-02,DOC009,2190
+P003,Tanvir Hasan,27,Male,1934567890,tanvir.h@gmail.com,Stomach pain,HOS002,1400,70,Card,2026-03-03,DOC004,1470
+P004,Nusrat Jahan,29,Female,1645678901,nusrat.j@gmail.com,Skin rash,HOS009,2500,90,Bkash,2026-03-04,DOC011,2590
+P005,Imran Hossain,50,Male,1556789012,imran50@gmail.com,Chest pain,HOS015,1500,70,Nagad,2026-03-05,DOC001,1570
+P006,Ayesha Rahman,22,Female,1767890123,ayesha.r@gmail.com,Fever,HOS007,1500,70,Rocket,2026-03-06,DOC003,1570
+P007,Sabbir Ahmed,35,Male,1878901234,sabbir.a@gmail.com,Back pain,HOS001,1200,50,Cash,2026-03-07,DOC007,1250
+P008,Mahi Islam,19,Female,1989012345,mahi.i@gmail.com,Acne,HOS013,700,50,Card,2026-03-08,DOC011,750
+P009,Rakib Khan,41,Male,1690123456,rakib.k@gmail.com,High blood pressure,HOS006,1500,100,Bkash,2026-03-09,DOC001,1600
+P010,Farhana Yasmin,38,Female,1501234567,farhana.y@gmail.com,Diabetes check,HOS010,2000,80,Nagad,2026-03-10,DOC003,2080
+P011,Arif Chowdhury,60,Male,1711223344,arif.c@gmail.com,Knee pain,HOS003,1300,70,Cash,2026-03-11,DOC007,1370
+P012,Lamia Sultana,26,Female,1822334455,lamia.s@gmail.com,Migraine,HOS012,1600,100,Card,2026-03-12,DOC009,1700
+P013,Shakib Ali,33,Male,1933445566,shakib.a@gmail.com,Cough,HOS005,700,90,Bkash,2026-03-13,DOC003,790
+P014,Tania Karim,44,Female,1644556677,tania.k@gmail.com,Thyroid issue,HOS008,1100,80,Rocket,2026-03-14,DOC003,1180
+P015,Mehedi Hasan,30,Male,1555667788,mehedi.h@gmail.com,Food poisoning,HOS014,1000,60,Cash,2026-03-15,DOC004,1060
+P016,Salma Begum,55,Female,1766778899,salma.b@gmail.com,Joint pain,HOS002,1400,60,Nagad,2026-03-16,DOC007,1460
+P017,Nazmul Islam,48,Male,1877889900,nazmul.i@gmail.com,Heartburn,HOS007,1500,70,Card,2026-03-17,DOC001,1570
+P018,Rima Khatun,24,Female,1988990011,rima.k@gmail.com,Allergy,HOS011,2100,90,Bkash,2026-03-18,DOC011,2190
+P019,Hasan Mahmud,36,Male,1699001122,hasan.m@gmail.com,Asthma,HOS004,500,80,Cash,2026-03-19,DOC018,580
+P020,Sharmin Akter,28,Female,1510112233,sharmin.a@gmail.com,Cold,HOS009,2500,90,Rocket,2026-03-20,DOC003,2590
+P021,Fahim Rahman,52,Male,1721222334,fahim.r@gmail.com,Chest tightness,HOS001,1200,50,Card,2026-03-21,DOC001,1250
+P022,Nilufa Yasmin,31,Female,1832333445,nilufa.y@gmail.com,PCOS,HOS015,1500,70,Nagad,2026-03-22,DOC013,1570
+P023,Adnan Karim,23,Male,1943444556,adnan.k@gmail.com,Fever,HOS006,1500,100,Cash,2026-03-23,DOC003,1600
+P024,Shila Ahmed,39,Female,1654555667,shila.a@gmail.com,Depression,HOS013,700,50,Bkash,2026-03-24,DOC003,750
+P025,Rubel Mia,47,Male,1565666778,rubel.m@gmail.com,High sugar,HOS003,1300,70,Card,2026-03-25,DOC003,1370
+P026,Anika Tabassum,21,Female,1776777889,anika.t@gmail.com,Acne,HOS010,2000,80,Rocket,2026-03-26,DOC011,2080
+P027,Kamrul Hasan,58,Male,1887888990,kamrul.h@gmail.com,Arthritis,HOS005,700,90,Cash,2026-03-27,DOC007,790
+P028,Munira Islam,34,Female,1998990021,munira.i@gmail.com,Anxiety,HOS012,1600,100,Nagad,2026-03-28,DOC003,1700
+P029,Saiful Alam,42,Male,1610001123,saiful.a@gmail.com,Ulcer,HOS008,1100,80,Bkash,2026-03-29,DOC004,1180
+P030,Roksana Begum,49,Female,1521112234,roksana.b@gmail.com,Breast pain,HOS014,1000,60,Card,2026-03-30,DOC013,1060
+P031,Joy Das,29,Male,1732223345,joy.d@gmail.com,Flu,HOS011,2100,50,Cash,2026-03-31,DOC003,2150
+P032,Shamima Noor,37,Female,1843334456,shamima.n@gmail.com,Back pain,HOS002,1400,60,Rocket,2026-04-01,DOC007,1460
+P033,Tareq Aziz,40,Male,1954445567,tareq.a@gmail.com,Arrhythmia,HOS007,1500,70,Bkash,2026-04-02,DOC001,1570
+P034,Sadia Afrin,25,Female,1665556678,sadia.a@gmail.com,Allergy,HOS001,1200,50,Card,2026-04-03,DOC011,1250
+P035,Masud Rana,53,Male,1576667789,masud.r@gmail.com,Lung infection,HOS004,500,80,Cash,2026-04-04,DOC018,580
+P036,Fariha Islam,30,Female,1787778890,fariha.i@gmail.com,Migraine,HOS015,1500,70,Nagad,2026-04-05,DOC009,1570
+P037,Rezaul Karim,46,Male,1898889901,rezaul.k@gmail.com,Diabetes,HOS009,2500,90,Bkash,2026-04-06,DOC003,2590
+P038,Tasnim Jahan,27,Female,1909990012,tasnim.j@gmail.com,Fever,HOS006,1500,100,Rocket,2026-04-07,DOC003,1600
+P039,Biplob Roy,33,Male,1620001124,biplob.r@gmail.com,Gastric,HOS013,700,70,Card,2026-04-08,DOC004,770
+P040,Mousumi Akter,41,Female,1531112235,mousumi.a@gmail.com,Hypertension,HOS003,1300,70,Cash,2026-04-09,DOC001,1370
+P041,Shahidul Islam,62,Male,1742223346,shahidul.i@gmail.com,Joint stiffness,HOS010,2000,80,Bkash,2026-04-10,DOC007,2080
+P042,Nabila Haque,20,Female,1853334457,nabila.h@gmail.com,Acne,HOS005,700,90,Nagad,2026-04-11,DOC011,790
+P043,Rifat Ahmed,38,Male,1964445568,rifat.a@gmail.com,Anxiety,HOS012,1600,100,Card,2026-04-12,DOC003,1700
+P044,Samia Rahman,35,Female,1675556679,samia.r@gmail.com,PCOS,HOS008,1100,60,Cash,2026-04-13,DOC013,1160
+P045,Arman Hossain,44,Male,1586667780,arman.h@gmail.com,Chest pain,HOS014,1000,60,Rocket,2026-04-14,DOC001,1060
+P046,Labiba Noor,23,Female,1797778891,labiba.n@gmail.com,Cold,HOS001,1200,100,Bkash,2026-04-15,DOC003,1300
+P047,Kabir Uddin,51,Male,1808889902,kabir.u@gmail.com,Thyroid,HOS007,1500,50,Card,2026-04-16,DOC003,1550
+P048,Sharika Islam,28,Female,1919990013,sharika.i@gmail.com,Skin infection,HOS011,2100,60,Cash,2026-04-17,DOC011,2160
+P049,Delwar Hossain,57,Male,1630001125,delwar.h@gmail.com,Asthma,HOS002,1400,60,Nagad,2026-04-18,DOC018,1460
+P050,Orpa Sultana,26,Female,1541112236,orpa.s@gmail.com,Fever and weakness,HOS004,500,80,Bkash,2026-04-19,DOC003,580

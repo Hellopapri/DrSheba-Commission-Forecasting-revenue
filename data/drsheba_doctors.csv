@@ -1,0 +1,34 @@
+Doctor_id,Doctor_name,Hospital_id,Age,Gender,Specialization_group,Qualification,Bmdc ,Experience_years,Online_consultation,Rating_avg,Rating_count,Total_reviews,Email,Emergency_service,Available_days,Available_time
+DOC001,Dr. Md. Ahsanul Hoque,HOS01,50.0,Male,Cardiologist,"MBBS, BCS (Health), MD (Cardiology), FCPS (Medicine, FP), CCD (BIRDEM)",BMDC-100001,12.0,Yes,4.36,110.0,191.0,drafsananahid.doc019@healthconnect.example,Yes,"Tue, Thu and Fri",11am to 2pm
+DOC002,Dr. Md. Kamruzzaman,HOS02,60.0,Male,Cardiologist,"MBBS, FCPS (Surgery), FCPS (Plastic Surgery), MRCS (EDIN), MRCS (UK)",BMDC-100002,21.0,Yes,4.47,336.0,376.0,drahmedsamialhasan.doc020@healthconnect.example,No,"Sun, Mon and Wed",7pm to 9pm
+DOC003,Dr. Md. Motlabur Rahman,HOS03,50.0,Male,Medicine Specialist,"MBBS, FCPS (Medicine), MCPS",BMDC-100003,18.0,No,4.51,191.0,281.0,drajoykumarsarker.doc021@healthconnect.example,Yes,"Sun, Mon and Wed",4pm to 7pm
+DOC004,Dr. Md. Nahid Hasan,HOS04,43.0,Male,Medicine Specialist,"MBBS (DMC), FCPS (Medicine)",BMDC-100004,17.0,No,4.57,200.0,231.0,drakhilranjonbiswas.doc022@healthconnect.example,No,Friday,5pm to 7pm
+DOC005,Prof. Dr. Md. Haider Ali Khan,HOS05,46.0,Male,Dentist,"BDS (Dhaka), MPH (BSMMU), MPhil (BSMMU), BCS (Health), TCTP (Sri Lanka)",BMDC-100005,26.0,Yes,4.72,291.0,338.0,drakmhumayunkabir.doc023@healthconnect.example,Yes,Friday,5pm to 9pm
+DOC006,Dr. Ariful Haque,HOS06,50.0,Male,Dentist,"MBBS, BCS (Health), MD (dentist)",BMDC-100006,21.0,Yes,4.45,336.0,426.0,drakmmonwarulislam.doc024@healthconnect.example,No,Friday,6pm to 8pm
+DOC007,Prof. Dr. Abul Kashem Khandaker,HOS07,30.0,Male,Orthopedics,"MBBS, FCPS (Medicine), PhD (Gastroenterology), FRCP (UK), FACP (USA), Fellow (WHO)",BMDC-100291,24.0,No,4.045925794235669,328.0,403.0,dralmahmudlemon.doc025@healthconnect.example,Yes,"Sun, Tue and Thu",11am to 2pm
+DOC008,Prof. Dr. F M Siddiqui,HOS08,57.0,Male,Orthopedics,"MBBS, FCPS (Chest Diseases), FACP (USA), FRCP (UK)",BMDC-100300,18.0,Yes,3.3821212979803743,306.0,317.0,dralimonsursharif.doc026@healthconnect.example,No,Thu and Fri,7pm to 9pm
+DOC009,Prof. Dr. Md. Haider Ali Khan,HOS09,66.0,Male,Neurologist,"BDS (Dhaka), MPH (BSMMU), MPhil (BSMMU), BCS (Health), TCTP (Sri Lanka)",BMDC-100336,26.0,Yes,4.7,291.0,338.0,drammmukarrabin.doc027@healthconnect.example,Yes,Friday,4:30pm to 7pm
+DOC010,Dr. A.Z.M. Mahfuzur Rahman,HOS10,41.0,Male,Neurologist,"MBBS, FCPS",BMDC-100423,18.0,Yes,4.6,247.0,309.0,dranayasahabanna.doc028@healthconnect.example,No,Everyday,5pm to 7pm
+,,,,,,,,,,,,,,Yes,Friday,7pm to 9pm
+DOC011,Dr. Hafiz Ahmed Nazmul Hakim,HOS12,60.0,Male,Dermatologist,"MBBS, DV, FCPS, DDV",BMDC-100065,18.0,No,3.5100952668838206,208.0,298.0,dranwarabegum.doc030@healthconnect.example,No,"Sat, Mon and Wed",4pm to 7pm
+DOC012,Dr. Hasib Rahman,HOS13,36.0,Male,Dermatologist,"MBBS, DV, FCPS, DDV",BMDC-100068,11.0,Yes,4.336757766858207,158.0,221.0,draparnadas.doc031@healthconnect.example,Yes,Sat and Tue,7pm to 9pm
+DOC013,Dr. Anwara Begum,HOS14,35.0,Female,Gynecologist,"MBBS, FCPS (OBGYN)",BMDC-100014,7.0,No,4.28,113.0,141.0,drarifulhaque.doc032@healthconnect.example,No,Friday,4pm to 7pm
+DOC014,Dr. AMM Mukarrabin,HOS15,45.0,Male,Gynecologist,"MBBS, BCS (Health), MS (Neurosurgery)",BMDC-100028,7.0,Yes,2.6925217315787524,201.0,235.0,drarunkumarpal.doc033@healthconnect.example,Yes,Fri and Sat,6:30pm to 9pm
+DOC015,Dr. Abul Hayat Manik,HOS01,57.0,Male,Pediatrician,"MBBS, BCS (Health), MD (Hepatology)",BMDC-100018,20.0,Yes,2.625741436784682,292.0,371.0,drasmfarhadkhan.doc034@healthconnect.example,No,"Sat, Sun, Mon and Fri",4pm to 10pm
+DOC016,Dr. M Saifuddin,HOS02,53.0,Male,Pediatrician,"MBBS, BCS, MD (Endocrinology), FRCP, FACP, FACE, FRSM",BMDC-100090,18.0,Yes,2.768594503296509,258.0,279.0,drasmsalimullah.doc035@healthconnect.example,Yes,"Sat, Sun, Wed and Thu",6pm to 9pm
+DOC017,Dr. Md. Asaduzzaman Liton,HOS03,52.0,Male,Ophthalmologist,"MBBS, BCS (Health), FCPS (ENT)",BMDC-100114,7.0,Yes,2.4,165.0,246.0,drasmakhatunaurora.doc036@healthconnect.example,No,Friday,6pm to 8pm
+DOC018,Dr. Md. Fazlul Haque Qasem,HOS04,37.0,Male,ENT Specialist,"MBBS, MS (ORTHO), WHO Fellow (Thailand)",BMDC-100121,19.0,Yes,4.8,273.0,316.0,drasrafulhaquechowdhury.doc037@healthconnect.example,Yes,Thu and Fri,7pm to 9pm
+DOC019,Dr. Mahfuz Ara Begum,HOS05,68.0,Female,Ophthalmologist,"MBBS, FCPS (OBGYN), MS (OBGYN), DGO, MCPS (OBGYN)",BMDC-100096,10.0,No,3.1,188.0,258.0,drayeshasiddikapurabi.doc038@healthconnect.example,No,Friday,7:30pm to 9pm
+DOC020,Dr. Mafruha Akter,HOS06,35.0,Female,ENT Specialist,"MBBS, FCPS (Hematology)",BMDC-100094,14.0,Yes,2.8,258.0,279.0,draynalhaqueshakil.doc039@healthconnect.example,Yes,Friday,4pm to 6pm
+DOC021,Dr. Abul Hayat Manik,HOS07,44.0,Male,ENT Specialist,"MBBS, FCPS (Hematology)",BMDC-100453,20.0,"4.1        300        371
+                
+                
+                
+                
+                
+                
+                
+                
+                yes",4.1,300.0,371.0,drazmalhospitallimitedchildrenscancercenter.doc040@healthconnect.example,Yes,Thu and Fri,3pm to 6pm
+,,,,,,,,,,,,,,No,"Sun, Tue, Thu and Fri",6pm to 9pm
+,,,,,,,,,,,,,,Yes,"Sat, Mon, Wed, Sun, Tue",3pm to 10pm

@@ -1,0 +1,16 @@
+Hospital_id,Hospital_name,Hospital_type,District,Thana,Full_address,Latitude,Longitude,Emergency_service,Service_charge,Total_beds,ICU_beds_available
+HOS001,Ibn Sina Diagnostic Center,Diagnostic Center,Dhaka,Dhaka Sadar,"28, Hut Lane, Doyagonj, Gandaria, Dhaka - 1204",23.826261,90.401452,No,50,50,19
+HOS002,Islami Bank Central Hospital,Private Hospital,Dhaka,Motijheel,"24/B Outer Circular Road, Motijheel, Dhaka",23.7337,90.4173,Yes,60,250,30
+HOS003,Chattogram Metropolitan Hospital,Private Hospital,Chattogram,Panchlaish,"698/752 O.R. Nizam Road, Chattogram",22.359915,91.773807,Yes,70,200,25
+HOS004,Lancet Diagnostic Center,Diagnostic Center,Chattogram,Panchlaish,"106/B K.B. Fazlul Kader Road, Chattogram",22.354717,91.775711,No,80,60,10
+HOS005,Ibn Sina Diagnostic Center Sylhet,Diagnostic Center,Sylhet,Sylhet Sadar,"Subhanighat Point, Sylhet",24.899,91.871,No,90,80,12
+HOS006,North East Medical College Hospital,Private Hospital,Sylhet,South Surma,"South Surma, Sylhet",24.889795,91.880644,Yes,100,300,30
+HOS007,Popular Diagnostic Center Rajshahi,Diagnostic Center,Rajshahi,Boalia,"Laxmipur, Rajshahi",24.374,88.604,No,50,90,10
+HOS008,Royal Hospital Pvt Ltd,Private Hospital,Rajshahi,Rajpara,"Laxmipur, Rajshahi",24.363589,88.624135,Yes,60,120,15
+HOS009,Gazi Medical College Hospital,Private Hospital,Khulna,Sonadanga,"Ahsan Ahmed Road, Khulna",22.841,89.54,Yes,70,250,20
+HOS010,Khulna City Medical College Hospital,Private Hospital,Khulna,Khalishpur,"Khalishpur, Khulna",22.845,89.55,Yes,80,200,18
+HOS011,Barisal Diagnostic Center,Diagnostic Center,Barisal,Barisal Sadar,"Sadar Road, Barisal",22.7015,90.3537,No,90,70,8
+HOS012,Islami Bank Hospital Barisal,Private Hospital,Barisal,Barisal Sadar,"Bogura Road, Barisal",22.704,90.3705,Yes,100,150,12
+HOS013,Prime Medical College Hospital,Private Hospital,Rangpur,Rangpur Sadar,"Pirzabad, Rangpur",25.746,89.251,Yes,50,200,18
+HOS014,Doctor's Community Hospital Rangpur,Private Hospital,Rangpur,Rangpur Sadar,"Jahaj Company More, Rangpur",25.7505,89.255,Yes,60,140,14
+HOS015,Community Based Medical College Hospital,Private Hospital,Mymensingh,Trishal,"Nandail Road, Mymensingh",24.583333,90.383333,Yes,70,220,20
